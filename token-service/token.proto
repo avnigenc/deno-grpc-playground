@@ -1,0 +1,31 @@
+syntax = "proto3";
+
+package tokenservice;
+
+service Token {
+  rpc GenerateToken (GenerateTokenRequest) returns (GenerateTokenResponse) {}
+  rpc ValidateToken (ValidateTokenRequest) returns (BoolResult) {}
+  rpc RevokeToken (RevokeTokenRequest) returns (BoolResult) {}
+
+  // rpc ValidateToken (ValidateTokenRequest) returns (stream HelloReply) {}
+}
+
+message BoolResult {
+  bool result = 1;
+}
+
+message GenerateTokenRequest {
+  string sub = 1;
+}
+
+message GenerateTokenResponse {
+  string token = 1;
+}
+
+message ValidateTokenRequest {
+  string token = 1;
+}
+
+message RevokeTokenRequest {
+  string token = 1;
+}

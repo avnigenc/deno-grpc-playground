@@ -1,0 +1,6 @@
+{
+  "tasks": {
+    "protoc": "deno run --allow-read https://deno.land/x/grpc_basic@0.4.6/gen/dts.ts ./token.proto > ./token.d.ts",
+    "start": "deno run -A --watch server.ts"
+  }
+}
